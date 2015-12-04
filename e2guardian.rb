@@ -27,6 +27,11 @@ class E2guardian < Formula
     system "make", "install"
   end
 
+  def post_install
+    (var/"log/e2guardian").mkpath
+    (var/"run/e2guardian").mkpath
+  end
+
   test do
     # `test do` will create, run in and delete a temporary directory.
     #
