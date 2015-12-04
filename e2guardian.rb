@@ -22,7 +22,13 @@ class E2guardian < Formula
     # installed, unless you say that they are depended on
     system "./autogen.sh"
 
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure",
+        "--disable-dependency-tracking",
+        "--enable-locallists=yes",
+        "--prefix=#{prefix}",
+        "--localstatedir=#{var}",
+        "--sysconfdir=#{etc}"
+
     system "make"
     system "make", "install"
   end
