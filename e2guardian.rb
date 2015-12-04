@@ -17,14 +17,10 @@ class E2guardian < Formula
     # Formula fails when building in parallel
     ENV.deparallelize 
 
-    # NOTE: Taken from autogen.sh; 
-    # Using 'system "./autogen.sh" fails because it can't find 'aclocal' even
-    # though it has been installed.
-    system "cp", "README.md", "README"
-    system "aclocal", "-I m4"
-    system "autoheader"
-    system "automake", "--add-missing", "--copy"
-    system "autoconf"
+    # NOTE: This requires the `depends_on` clauses for automake, autoconf and libtool
+    # It seems like Homebrew doesn't include the paths to these, even if they have been
+    # installed, unless you say that they are depended on
+    system "./autogen.sh"
 
     system "./configure", "--prefix=#{prefix}"
     system "make"
