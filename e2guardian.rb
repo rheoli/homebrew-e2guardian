@@ -1,11 +1,8 @@
-# Documentation: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Formula-Cookbook.md
-#                http://www.rubydoc.info/github/Homebrew/homebrew/master/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class E2guardian < Formula
   desc "Fork of Dansguardian Project with many improvements and bug fixes, e2guardian is a web content filtering proxy that works in conjunction with another caching proxy such as Squid or Oops"
   homepage "http://www.e2guardian.org"
-  head "https://github.com/e2guardian/e2guardian.git"
+  url "https://github.com/e2guardian/e2guardian", :using => :git, :tag => "v3.2.0", :revision => "35be4a5"
+  head "https://github.com/e2guardian/e2guardian"
 
   depends_on "automake" => :build
   depends_on "autoconf" => :build
