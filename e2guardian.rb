@@ -7,10 +7,10 @@ class E2guardian < Formula
   homepage "http://www.e2guardian.org"
   head "https://github.com/e2guardian/e2guardian.git"
 
-  depends_on "automake"
-  depends_on "autoconf"
-  depends_on "libtool"
-  depends_on "pkg-config"
+  depends_on "automake" => :build
+  depends_on "autoconf" => :build
+  depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
   depends_on "pcre"
 
   def install
