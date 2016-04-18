@@ -1,7 +1,7 @@
 class E2guardian < Formula
   desc "Fork of Dansguardian Project with many improvements and bug fixes, e2guardian is a web content filtering proxy that works in conjunction with another caching proxy such as Squid or Oops"
   homepage "http://www.e2guardian.org"
-  url "https://github.com/e2guardian/e2guardian", :using => :git, :tag => "v3.2.0", :revision => "35be4a5b40aedc6a800c06389c220a8dbf35f1cc"
+  url "https://github.com/e2guardian/e2guardian", :using => :git, :tag => "v3.4.0.3", :revision => "d76c5f23ee291da2bbf51e146056a33e219ef36f"
   head "https://github.com/e2guardian/e2guardian"
 
   depends_on "automake" => :build
