@@ -8,6 +8,8 @@ class E2guardian < Formula
   depends_on "autoconf" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  depends_on "clamav" => :build
+  depends_on "openssl" => :build
   depends_on "pcre"
 
   def install
@@ -24,7 +26,9 @@ class E2guardian < Formula
         "--enable-locallists=yes",
         "--prefix=#{prefix}",
         "--localstatedir=#{var}",
-        "--sysconfdir=#{etc}"
+        "--sysconfdir=#{etc}",
+        "--enable-clamd=yes",
+        "--enable-sslmitm=yes"
 
     system "make"
     system "make", "install"
